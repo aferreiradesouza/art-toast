@@ -21,7 +21,7 @@
     "url": "https://github.com/aferreiradesouza/art-toast.git"
   },
   "homepage": "https://github.com/aferreiradesouza/art-toast.git",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
