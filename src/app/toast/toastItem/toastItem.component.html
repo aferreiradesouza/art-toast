@@ -1,0 +1,22 @@
+<div #toast [class]="'cursor-pointer animated toast fadeInRight faster ' + type" (click)="clickRemoveToast()"
+    [ngClass]="{'fadeOutRight' : addTransitionExit}" [ngStyle]="{'top': getTopPosition()}"
+    (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
+    <div class="content">
+        <div class="icon" *ngIf="config.showIcon">
+            <i [class]="'fa fa-' + getIcon() + ' iconToast'"></i>
+        </div>
+        <div class="text">
+            <div class="description">
+                <div class="title" *ngIf="title">{{title}}</div>
+                <div [ngClass]="{'pt-2' : config.button && !message}">
+                    <div *ngIf="message" [ngClass]="{'mb-2' : config.button}" [innerHTML]="message"></div>
+                    <button (click)="onClick()" *ngIf="config.button">{{config.button.label}}</button>
+                </div>
+            </div>
+            <div class="append-close-button ml-auto" *ngIf="config.showButtonClose" (click)="clickRemoveToast(true)">
+                <i class="fa fa-times times"></i>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="config.timer" #progressBar class="progress-bar-toast"></div>
+</div>

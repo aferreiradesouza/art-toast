@@ -1,0 +1,97 @@
+@import 'variables';
+
+.times {
+    font-size: 10px;
+}
+
+.iconToast {
+    font-size: 32px;
+}
+
+.toast {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    min-height: 48px;
+    transition: .5s;
+    top: 0;
+    right: 0;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */     
+
+    &.success {
+        background-color: $success;
+        color: $contrast-success
+    }
+
+    &.info {
+        background-color: $info;
+        color: $contrast-info
+    }
+
+    &.warning {
+        background-color: $warning;
+        color: $contrast-warning
+    }
+
+    &.danger {
+        background-color: $danger;
+        color: $contrast-danger
+    }
+
+    > .content {
+        display: flex;
+        @include vertical-align();
+        
+        > .icon {
+            @include vertical-align();
+            margin-right: 5px;
+            margin-left: 10px;
+            padding-left: 10px;
+        }
+
+        > .text {
+            display: flex;
+            width: 100%;
+
+            > .description {
+                padding: 10px 0px 10px 10px;
+
+                > .title {
+                    font-weight: bold;
+                }
+            }
+
+            > .append-close-button {
+                padding: 0px 15px;
+                @include center-align();
+                background-color: rgba(0, 0, 0, 0.15);
+                border-left: .5px solid rgba(0, 0, 0, 0.3);
+                transition: .5s;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.35);
+                }
+            }
+        }
+    }
+
+    > .progress-bar-toast {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0px;
+        height: 3.5px;
+        background-color: white;
+    }
+}
+
+.transition-enter {
+    animation-fill-mode: forwards;
+    animation: animationToastEnter;
+    transition: .5s;
+}

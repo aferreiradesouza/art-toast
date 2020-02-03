@@ -1,0 +1,75 @@
+$primary: #ED2553;
+$light-primary: rgba(237, 37, 83, 0.77);
+$contrast-primary: #fff;
+
+$secondary: #333333;
+$light-secondary: #EEEEEE;
+$contrast-secondary: #fff;
+
+$basic: #FFFFFF;
+$contrast-basic: $primary;
+
+$info: #2584BA;
+$contrast-info: #fff;
+
+$danger: #DC3545;
+$contrast-danger: #fff;
+
+$warning: #FFC107;
+$contrast-warning: #fff;
+
+$success: #28A745;
+$contrast-success: #fff;
+
+$white: #fff;
+$black: #000;
+
+@mixin for-mobile {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-desktop {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin center-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+@mixin z-index($type) {
+    @if ($type == 'dropdown') {
+        z-index: 2 !important;
+    } @else if ($type == 'popup') {
+        z-index: 3 !important;
+    } @else if ($type == 'header') {
+        z-index: 5 !important;
+    } @else if ($type == 'modal') {
+        z-index: 6 !important;
+    } @else if ($type == 'toast') {
+        z-index: 7 !important;
+    }
+}
+  

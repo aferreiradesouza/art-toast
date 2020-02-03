@@ -1,0 +1,14 @@
+@import 'variables';
+
+.listToast {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 290px;
+    transition: .5s;
+    @include z-index('toast');
+
+    @include for-mobile {
+        width: calc(100vw - 20px);
+    }
+}
