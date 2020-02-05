@@ -1,0 +1,12 @@
+.listToast {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 290px;
+    transition: .5s;
+    z-index: 7 !important;
+
+    @media (min-width: 600px) {
+        width: calc(100vw - 20px);
+    }
+}

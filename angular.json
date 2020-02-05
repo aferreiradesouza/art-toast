@@ -127,6 +127,41 @@
           }
         }
       }
+    },
+    "art-toast": {
+      "projectType": "library",
+      "root": "projects/art-toast",
+      "sourceRoot": "projects/art-toast/src",
+      "prefix": "art",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/art-toast/tsconfig.lib.json",
+            "project": "projects/art-toast/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/art-toast/src/test.ts",
+            "tsConfig": "projects/art-toast/tsconfig.spec.json",
+            "karmaConfig": "projects/art-toast/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/art-toast/tsconfig.lib.json",
+              "projects/art-toast/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "toast-module"
 }

@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "art-toast": [
+        "dist/art-toast"
+      ],
+      "art-toast/*": [
+        "dist/art-toast/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -1,0 +1,98 @@
+.times {
+    font-size: 10px;
+}
+
+.iconToast {
+    font-size: 32px;
+}
+
+.toast {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    min-height: 48px;
+    transition: .5s;
+    top: 0;
+    right: 0;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */     
+
+    &.success {
+        background-color: #28A745;
+        color: #fff
+    }
+
+    &.info {
+        background-color: #2584BA;
+        color: #fff
+    }
+
+    &.warning {
+        background-color: #FFC107;
+        color: #fff
+    }
+
+    &.danger {
+        background-color: #DC3545;
+        color: #fff
+    }
+
+    > .content {
+        display: flex;
+        align-items: center;
+        
+        > .icon {
+            display: flex;
+            align-items: center;
+            margin-right: 5px;
+            margin-left: 10px;
+            padding-left: 10px;
+        }
+
+        > .text {
+            display: flex;
+            width: 100%;
+
+            > .description {
+                padding: 10px 0px 10px 10px;
+
+                > .title {
+                    font-weight: bold;
+                }
+            }
+
+            > .append-close-button {
+                padding: 0px 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(0, 0, 0, 0.15);
+                border-left: .5px solid rgba(0, 0, 0, 0.3);
+                transition: .5s;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.35);
+                }
+            }
+        }
+    }
+
+    > .progress-bar-toast {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0px;
+        height: 3.5px;
+        background-color: white;
+    }
+}
+
+.transition-enter {
+    animation-fill-mode: forwards;
+    animation: animationToastEnter;
+    transition: .5s;
+}
