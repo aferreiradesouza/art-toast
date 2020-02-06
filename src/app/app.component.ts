@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastService } from './toast/service/toast.service';
+import { ArtToastService } from 'projects/art-toast/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,13 @@ import { ToastService } from './toast/service/toast.service';
 export class AppComponent {
   title = 'toast-module';
   public showToast: boolean;
-  constructor(private toastService: ToastService) {
-    this.toastService.changes.subscribe(e => {
-      this.showToast = e.length > 0;
-    });
+  constructor(private artToastService: ArtToastService) {
   }
 
   click() {
-    this.toastService.success('teste', 'teste');
+    this.artToastService.success('teste', 'testedawdawdawd wadawdlkj dawlkdjlakw jdlakwjdlkawjd lkajwld kjawlkdjlkawjdlk jawdlkja', {
+      customIcon: 'area-chart',
+      showButtonClose: true
+    });
   }
 }
