@@ -4,7 +4,7 @@ import { ArtToastService } from './art-toast.service';
 @Component({
   selector: 'art-toast',
   templateUrl: 'art-toast.component.html',
-  styleUrls: ['art-toast.component.scss']
+  styleUrls: ['art-toast.component.scss', './style/animate.component.css', './style/font-awesome/font-awesome.component.css']
 })
 export class ArtToastComponent implements OnInit {
 
