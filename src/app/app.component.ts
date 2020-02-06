@@ -13,9 +13,10 @@ export class AppComponent {
   }
 
   click() {
-    this.artToastService.success('teste', 'testedawdawdawd wadawdlkj dawlkdjlakw jdlakwjdlkawjd lkajwld kjawlkdjlkawjdlk jawdlkja', {
-      customIcon: 'area-chart',
-      showButtonClose: true
+    this.artToastService.success('', 'testedawdawdawd wadawdlkj dawlkdjlakw jdlakwjdlkawjd lkajwld kjawlkdjlkawjdlk jawdlkja', {
+      timer: 2000,
+      showButtonClose: true,
+      stopTimerOnHover: false
     });
   }
 }
