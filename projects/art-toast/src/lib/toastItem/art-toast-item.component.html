@@ -7,7 +7,7 @@
         </div>
         <div class="text">
             <div class="description">
-                <div class="title" *ngIf="title">{{title}}</div>
+                <div class="title mb-2" *ngIf="title">{{title}}</div>
                 <div [ngClass]="{'pt-2' : config.button && !message}">
                     <div *ngIf="message" [ngClass]="{'mb-2' : config.button}" [innerHTML]="message"></div>
                     <button (click)="onClick()" *ngIf="config.button">{{config.button.label}}</button>

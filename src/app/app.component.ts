@@ -13,8 +13,7 @@ export class AppComponent {
   }
 
   click() {
-    this.artToastService.success('', 'testedawdawdawd wadawdlkj dawlkdjlakw jdlakwjdlkawjd lkajwld kjawlkdjlkawjdlk jawdlkja', {
-      timer: 2000,
+    this.artToastService.success('😃 BOOOA!', 'Deu tudo certo!', {
       showButtonClose: true
     });
   }

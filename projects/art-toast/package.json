@@ -1,6 +1,6 @@
 {
   "name": "art-toast",
-  "version": "1.5.0",
+  "version": "1.5.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/aferreiradesouza/art-toast.git",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
   }
 }

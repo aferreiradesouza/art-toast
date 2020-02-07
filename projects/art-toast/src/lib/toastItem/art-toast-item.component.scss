@@ -59,9 +59,11 @@
 
             > .description {
                 padding: 10px 0px 10px 10px;
+                width: 100%;
 
                 > .title {
                     font-weight: bold;
+                    margin-bottom: .5rem;
                 }
             }
 
