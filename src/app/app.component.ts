@@ -15,8 +15,7 @@ export class AppComponent {
   click() {
     this.artToastService.success('', 'testedawdawdawd wadawdlkj dawlkdjlakw jdlakwjdlkawjd lkajwld kjawlkdjlkawjdlk jawdlkja', {
       timer: 2000,
-      showButtonClose: true,
-      stopTimerOnHover: false
+      showButtonClose: true
     });
   }
 }

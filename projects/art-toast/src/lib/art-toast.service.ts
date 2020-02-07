@@ -116,6 +116,7 @@ export class ArtToastService {
     }
 
     private createNewObjectToast(title: string, message: string, type: TypesToast, config: ConfigToast): Toast {
+        console.log(config ? !!config.stopTimerOnHover : true);
         return  {
             title,
             message,
@@ -129,7 +130,7 @@ export class ArtToastService {
                 customIcon: config ? config.customIcon : null,
                 showIcon: config ? config.showIcon === undefined || config.showIcon : true,
                 preventDuplicate: config ? !!config.preventDuplicate : false,
-                stopTimerOnHover: config ? config.stopTimerOnHover : false,
+                stopTimerOnHover: config && config.stopTimerOnHover !== undefined ? config.stopTimerOnHover : true,
                 limit: config ? config.limit : null,
                 button: config && config.button ? {
                     label: config.button.label,
