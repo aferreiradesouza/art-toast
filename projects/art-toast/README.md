@@ -1,24 +1,58 @@
-# ArtToast
+# Art Toast
+Art Toast is an easy-to-use library.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+DEMO: coming soon
+## Install
 
-## Code scaffolding
+    npm install ngx-toastr --save
+    
+`font-awesome` is a necessary dependency for icons
 
-Run `ng generate component component-name --project art-toast` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project art-toast`.
-> Note: Don't forget to add `--project art-toast` or else it will be added to the default project in your `angular.json` file. 
+    npm i font-awesome@4.7.0
 
-## Build
+## Setup
+**1:** Add font-awesome to angular.json
 
-Run `ng build art-toast` to build the project. The build artifacts will be stored in the `dist/` directory.
+    {
+	    ...
+	    "styles": [
+		    "node_modules/font-awesome/css/font-awesome.min.css"
+	    ]
+    }
 
-## Publishing
+**2:** Add the module to app.module.ts
 
-After building your library with `ng build art-toast`, go to the dist folder `cd dist/art-toast` and run `npm publish`.
+    import { ArtToastModule } from  'art-toast';
+    
+    @NgModule({
+    declarations: [
+	    ...
+    ],
+    imports: [
+	    ...,
+	    ArtToastModule
+    ],
+    providers: [...],
+    })
 
-## Running unit tests
+**3:** Add in app.component.html
 
-Run `ng test art-toast` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    <art-toast></art-toast>
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Using
+
+	import { Component } from  '@angular/core';
+	import { ArtToastService } from  'art-toast';
+	
+	@Component({...})
+	export  class  AppComponent {
+		constructor(private  artToastService: ArtToastService) { }
+		showToast() {
+			this.artToastService.success('title', 'description', {
+			showButtonClose:  true,
+			timer:  2000
+			});
+		}
+	}
+
