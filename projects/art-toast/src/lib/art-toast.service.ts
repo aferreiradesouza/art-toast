@@ -116,7 +116,6 @@ export class ArtToastService {
     }
 
     private createNewObjectToast(title: string, message: string, type: TypesToast, config: ConfigToast): Toast {
-        console.log(config ? !!config.stopTimerOnHover : true);
         return  {
             title,
             message,

@@ -9,12 +9,12 @@ import { ArtToastService } from 'projects/art-toast/src/public-api';
 export class AppComponent {
   title = 'toast-module';
   public showToast: boolean;
-  constructor(private artToastService: ArtToastService) {
-  }
+  constructor(private artToastService: ArtToastService) { }
 
   click() {
     this.artToastService.success('😃 BOOOA!', 'Deu tudo certo!', {
-      showButtonClose: true
+      showButtonClose: true,
+      timer: 5000
     });
   }
 }

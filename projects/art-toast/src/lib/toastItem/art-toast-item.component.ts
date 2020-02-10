@@ -89,7 +89,6 @@ export class ArtToastItemComponent implements OnInit {
 
     mouseEnter(event: MouseEvent) {
         if (!this.config.timer || this.addTransitionExit || !this.config.stopTimerOnHover) {
-            console.log(!this.config.timer, this.addTransitionExit, !!this.config.stopTimerOnHover);
             return;
         }
         clearTimeout(this.timeout);
@@ -99,7 +98,6 @@ export class ArtToastItemComponent implements OnInit {
 
     mouseLeave(event: MouseEvent) {
         if (!this.config.timer || this.addTransitionExit || !this.config.stopTimerOnHover) {
-            console.log(this.config.timer, this.addTransitionExit, !!this.config.stopTimerOnHover);
             return;
         }
         this.resumeTimeOut();
