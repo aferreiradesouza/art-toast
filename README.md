@@ -1,27 +1,58 @@
-# ToastModule
+# Art Toast
+Art Toast is an easy-to-use library.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+DEMO: coming soon
+## Install
 
-## Development server
+    npm install ngx-toastr --save
+    
+`font-awesome` is a necessary dependency for icons
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    npm i font-awesome@4.7.0
 
-## Code scaffolding
+## Setup
+**1:** Add font-awesome to angular.json
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    {
+	    ...
+	    "styles": [
+		    "node_modules/font-awesome/css/font-awesome.min.css"
+	    ]
+    }
 
-## Build
+**2:** Add the module to app.module.ts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    import { ArtToastModule } from  'art-toast';
+    
+    @NgModule({
+    declarations: [
+	    ...
+    ],
+    imports: [
+	    ...,
+	    ArtToastModule
+    ],
+    providers: [...],
+    })
 
-## Running unit tests
+**3:** Add in app.component.html
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    <art-toast></art-toast>
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Using
 
-## Further help
+	import { Component } from  '@angular/core';
+	import { ArtToastService } from  'art-toast';
+	
+	@Component({...})
+	export  class  AppComponent {
+		constructor(private  artToastService: ArtToastService) { }
+		showToast() {
+			this.artToastService.success('title', 'description', {
+			showButtonClose:  true,
+			timer:  2000
+			});
+		}
+	}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
