@@ -33,6 +33,7 @@ export class ArtToastItemComponent implements OnInit {
     }
 
     start() {
+        this.getCustomTheme();
         this.toastService.setSize(this.id, this.toast.nativeElement.offsetHeight);
         if (this.config.timer === 0 || !this.config.timer) {
             return;
@@ -112,5 +113,13 @@ export class ArtToastItemComponent implements OnInit {
         this.timeout = setTimeout(() => {
             this.closeToast(this.id);
         }, this.config.timer);
+    }
+
+    getCustomTheme() {
+        if (!this.toastService.customTheme) {
+            return null;
+        }
+        this.toast.nativeElement.style.backgroundColor = this.toastService.customTheme[this.type].backgroundColor;
+        this.toast.nativeElement.style.color = this.toastService.customTheme[this.type].color;
     }
 }

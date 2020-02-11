@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, Inject } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { share } from 'rxjs/operators';
 
@@ -30,6 +30,25 @@ export interface ConfigToast {
     };
 }
 
+interface CustomTheme {
+    danger: {
+        backgroundColor: string;
+        color: string;
+    };
+    info: {
+        backgroundColor: string;
+        color: string;
+    };
+    success: {
+        backgroundColor: string;
+        color: string;
+    };
+    warning: {
+        backgroundColor: string;
+        color: string;
+    };
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -40,8 +59,10 @@ export class ArtToastService {
     // tslint:disable-next-line: variable-name
     private _toasts: Toast[] = null;
     private id = 0;
+    public customTheme: CustomTheme = null;
 
-    constructor() {
+    constructor(@Inject('config') private config: CustomTheme) {
+        this.customTheme = this.config;
         this._toasts = [];
     }
     private addToast(item: Toast) {
@@ -81,7 +102,7 @@ export class ArtToastService {
         try {
             const index = this.toasts.map(e => e.id).indexOf(id);
             this.toasts[index].addTransitionExit = true;
-        } catch (err) {}
+        } catch (err) { }
     }
 
     public success(title: string, message: string, config?: ConfigToast): void {
@@ -116,7 +137,7 @@ export class ArtToastService {
     }
 
     private createNewObjectToast(title: string, message: string, type: TypesToast, config: ConfigToast): Toast {
-        return  {
+        return {
             title,
             message,
             type,

@@ -14,7 +14,7 @@ export class AppComponent {
   click() {
     this.artToastService.success('😃 BOOOA!', 'Deu tudo certo!', {
       showButtonClose: true,
-      timer: 5000
+      timer: 3000
     });
   }
 }

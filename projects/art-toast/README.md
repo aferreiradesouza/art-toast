@@ -4,7 +4,7 @@ Art Toast is an easy-to-use library.
 DEMO: coming soon
 ## Install
 
-    npm install ngx-toastr --save
+    npm install art-toast
     
 `font-awesome` is a necessary dependency for icons
 
