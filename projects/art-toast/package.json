@@ -20,6 +20,23 @@
     "url": "https://github.com/aferreiradesouza/art-toast.git"
   },
   "homepage": "https://github.com/aferreiradesouza/art-toast.git",
+  "keywords": [
+    "ng2",
+    "ngx",
+    "ngx-toastr",
+    "toastr-ng2",
+    "angular",
+    "angular8",
+    "angular9",
+    "typescript",
+    "alert",
+    "toast",
+    "toastr",
+    "angular toastr",
+    "notifications",
+    "art toast",
+    "art"
+  ],
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
