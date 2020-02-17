@@ -4,7 +4,7 @@
     top: 10px;
     width: 290px;
     transition: .5s;
-    z-index: 7 !important;
+    z-index: 99999 !important;
 
     @media (max-width: 600px) {
         width: calc(100vw - 20px);
