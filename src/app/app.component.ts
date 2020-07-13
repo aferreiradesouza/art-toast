@@ -12,9 +12,9 @@ export class AppComponent {
   constructor(private artToastService: ArtToastService) { }
 
   click() {
-    this.artToastService.success('😃 BOOOA!', 'Deu tudo certo!', {
-      showButtonClose: true,
-      timer: 3000
+    this.artToastService.success('dwadaw', 'Deu tudo certo!', {
+      timer: 30000,
+      showButtonClose: true
     });
   }
 }

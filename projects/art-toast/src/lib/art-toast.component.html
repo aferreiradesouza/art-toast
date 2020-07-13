@@ -1,7 +1,7 @@
 <div class="listToast" #list *ngIf="showToast">
     <ng-container *ngFor="let toast of allToasts; let i = index">
         <art-toast-item [type]="toast.type" [title]="toast.title" [message]="toast.message" [id]="toast.id"
-            [config]="toast.config" [addTransitionExit]="toast.addTransitionExit" [index]="i">
+            [config]="toast.config" [addTransitionExit]="toast.addTransitionExit" [index]="i" [toastItem]="toast">
         </art-toast-item>
     </ng-container>
 </div>

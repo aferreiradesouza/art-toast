@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, Input, ElementRef } from '@angular/core';
-import { ConfigToast, TypesToast, ArtToastService } from '../art-toast.service';
+import { ConfigToast, TypesToast, ArtToastService, Toast } from '../art-toast.service';
 
 @Component({
     selector: 'art-toast-item',
@@ -19,10 +19,12 @@ export class ArtToastItemComponent implements OnInit {
     @Input() config: ConfigToast;
     @Input() type: TypesToast;
     @Input() index: number;
+    @Input() toastItem: Toast;
     @Input() addTransitionExit: boolean;
 
     @ViewChild('progressBar', { static: false }) progressBar: ElementRef<HTMLDivElement>;
     @ViewChild('toast', { static: false }) toast: ElementRef<HTMLDivElement>;
+    @ViewChild('content', { static: false }) content: ElementRef<HTMLDivElement>;
 
     constructor(private toastService: ArtToastService) { }
 
@@ -35,6 +37,7 @@ export class ArtToastItemComponent implements OnInit {
     start() {
         this.getCustomTheme();
         this.toastService.setSize(this.id, this.toast.nativeElement.offsetHeight);
+        this.content.nativeElement.style.height = `${this.toast.nativeElement.offsetHeight}px`;
         if (this.config.timer === 0 || !this.config.timer) {
             return;
         }
